@@ -1,0 +1,352 @@
+/* =========================
+   RESET & BASE STYLES
+========================= */
+:root {
+    --primary: #0a3d62;
+    --primary-dark: #3c6382;
+    --accent: #3498db;
+    --accent-hover: #2980b9;
+    --bg: #f4f7fb;
+    --text: #333;
+    --link: #555555;
+    --link-hover: #0066cc;
+    --muted: #7f8c8d;
+    --card-border: #eee;
+    --radius: 10px;
+    --shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a:link,
+a:visited {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    background-color: var(--primary);
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #82ccdd;
+}
+
+/* Table-based navigation used by current pages */
+.top-bar {
+    width: 100%;
+}
+
+.top-bar td {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--link);
+}
+
+.nav-table {
+    width: 100%;
+}
+
+.nav-table td {
+    font-weight: 400;
+}
+
+.nav-table td a {
+    color: var(--link);
+    font-weight: 400;
+    display: inline-block;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.nav-table td a:hover {
+    color: var(--link-hover);
+    background: rgba(52, 152, 219, 0.08);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* =========================
+   CARDS / SECTIONS
+========================= */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Index page button styles */
+.btn-primary {
+    font-size: 16px;
+    background: var(--accent);
+    border-radius: 5px;
+    color: aliceblue;
+    border: 0;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+    font-size: 16px;
+    background: transparent;
+    border-radius: 5px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* =========================
+   TABLES
+========================= */
+table {
+    border-collapse: collapse;
+}
+
+/* Data tables in this project use border="2" etc; avoid styling layout tables (border="0") */
+table[border]:not([border="0"]) {
+    width: 100%;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table[border]:not([border="0"]) th,
+table[border]:not([border="0"]) td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+table[border]:not([border="0"]) th {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+table[border]:not([border="0"]) tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--primary);
+    color: #ffffff;
+    
+}
+
+/* =========================
+   IMAGES (FIXED)
+========================= */
+/* Remove global override */
+img {
+    height: auto;
+}
+
+/* Only responsive images when explicitly needed */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   UTILITY CLASSES
+========================= */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+/* =========================
+   GLOBAL LAYOUT FIX
+========================= */
+/* Add consistent spacing between sections */
+section, .card, form, table {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FLEX LAYOUT SYSTEM
+========================= */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .top-bar td,
+    .nav-table td {
+        display: block;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .hero-title {
+        font-size: 32px !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
